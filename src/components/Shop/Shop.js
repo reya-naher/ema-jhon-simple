@@ -13,7 +13,7 @@ const Shop = () => {
   const [cart, setCart] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/products')
+    fetch('https://safe-fjord-18160.herokuapp.com/products')
       .then(res => res.json())
     .then(data => setProducts(data))
 },[])
@@ -21,7 +21,7 @@ const Shop = () => {
   useEffect(() => {
     const savedCart = getDatabaseCart();
     const productKeys = Object.keys(savedCart);
-    fetch('http://localhost:5000/productsByKeys', {
+    fetch('https://safe-fjord-18160.herokuapp.com/productsByKeys', {
       method: 'POST',
       headers: {
         'Content-Type':'application/json'
@@ -30,7 +30,8 @@ const Shop = () => {
     })
     .then(res => res.json())
     .then(data => setCart(data))
-  },[])
+  }, [])
+  
   const handleProduct = (product) => {
     const toBeAddedKey = product.key;
     const sameProduct = cart.find(pd => pd.key === toBeAddedKey)
