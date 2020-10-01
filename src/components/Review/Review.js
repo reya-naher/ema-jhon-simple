@@ -10,17 +10,17 @@ const Review = () => {
   const [cart, setCart] = useState([])
   const [orderPlaced, setOrderPlaced] = useState(false);
   const history = useHistory()
+
   const handleProceedCheckout = () => {
     history.push('/shipment');
-    setCart([]);
-    setOrderPlaced(true);
-    processOrder();
+
   }
 
   const removeProduct = (productKey) => {
     const newCart = cart.filter(pd => pd.key !== productKey)
-    removeFromDatabaseCart(productKey)
     setCart(newCart)
+    removeFromDatabaseCart(productKey)
+   
   }
   useEffect(() => {
     const savedCart = getDatabaseCart()
@@ -49,8 +49,8 @@ const Review = () => {
         {
           cart.map(pd =>
             <ReviewItem
-              product={pd}
               key={pd.key}
+              product={pd}
               removeProduct={removeProduct}>
             </ReviewItem>
           )
