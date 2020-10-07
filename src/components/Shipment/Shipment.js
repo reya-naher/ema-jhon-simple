@@ -6,7 +6,7 @@ import { UserContext } from '../../App';
 import { getDatabaseCart, processOrder } from '../../utilities/databaseManager';
 
 const Shipment = () => {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, errors,watch } = useForm();
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const onSubmit = data => {
     const savedCart = getDatabaseCart();
@@ -29,7 +29,7 @@ const Shipment = () => {
 
   };
 
-  // console.log(watch("example"));
+ console.log(watch("example"));
 
   return (
     <form className="ship-form" onSubmit={handleSubmit(onSubmit)}>
