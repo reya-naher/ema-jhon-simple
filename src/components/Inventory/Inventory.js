@@ -1,14 +1,14 @@
 import React from 'react';
-import fakeData from '../../fakeData';
 
 const Inventory = () => {
   const handleAddProduct = () => {
+    const products = {}
     fetch('https://safe-fjord-18160.herokuapp.com/addProduct', {
       method: 'POST',
       headers: {
         'Content-Type':'application/json'
       },
-      body: JSON.stringify(fakeData)
+      body: JSON.stringify(products)
     })
   }
   return (

@@ -6,10 +6,11 @@ import Cart from '../Cart/Cart';
 import happyImage from '../../images/giphy.gif'
 import { useHistory } from 'react-router-dom';
 
+
 const Review = () => {
   const [cart, setCart] = useState([])
   const [orderPlaced, setOrderPlaced] = useState(false);
-  const history = useHistory()
+  const history = useHistory();
 
   const handleProceedCheckout = () => {
     history.push('/shipment');
