@@ -18,15 +18,25 @@ export const handleGoogleSignIn = () => {
         email: email,
         photo: photoURL,
         success: true
-      }
+      };
+      setUserToken();
       return signedInUser;
-      console.log(displayName,email,photoURL);
+      //console.log(displayName,email,photoURL);
     })
     .catch(err => {
       console.log(err);
       console.log(err.message);
   })
 }
+
+const setUserToken = () => {
+  firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
+    sessionStorage.setItem('token',idToken)
+  }).catch(function(error) {
+    // Handle error
+  });
+}
+
 
 export const handleFbSignIn = () => {
 const fbProvider = new firebase.auth.FacebookAuthProvider();

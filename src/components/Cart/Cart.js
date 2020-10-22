@@ -6,10 +6,9 @@ const Cart = (props) => {
   // const total = cart.reduce((total, pd) => total + pd.price, 0);
   let total = 0;
   for (let i = 0; i < cart.length; i++){
-    const product = cart[i];
-    // if (product.quantity) {
-      total = total + product.price * product.quantity;
-    // }
+    const product = cart[i]
+      total = total + product.price * product.quantity || 1;
+
     
     
   }
