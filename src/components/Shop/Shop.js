@@ -57,9 +57,12 @@ const Shop = () => {
   return (
     <div className="twin-container">
       <div className="product-container">
-        <input type="text" onBlur={handleSearch} className="product-search" name="search" id=""/>
-          {
-          products.map(item =>
+        <input type="text" onBlur={handleSearch} className="product-search" name="search" id="" />
+        {
+          products.length === 0 && <div class="loader"></div>
+        }
+        {  
+         products.map(item =>
             <Product
             key = {item.key}
             showAddToCart={true}
