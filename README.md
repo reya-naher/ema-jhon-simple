@@ -1,6 +1,6 @@
 # Ema-Jhon
 
-# [Live](http://localhost:3000) to view it in the browser.
+# [Live](https://ema-jhon-simple-e75ee.web.app/)
 
 ## Features 
 

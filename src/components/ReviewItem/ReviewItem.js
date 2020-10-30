@@ -12,8 +12,8 @@ const ReviewItem = (props) => {
   }
   return (
     <div style={reviewStyle} className="review-item">
-      <h1 className="product-name">{name}</h1>
-      <h1>Quantity:{quantity}</h1>
+      <h3 className="product-name">{name}</h3>
+      <h5>Quantity:{quantity}</h5>
       <p>Price: {price}</p>
       <br />
       <button
